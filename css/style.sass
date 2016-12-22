@@ -1,0 +1,1467 @@
+@charset "utf-8"
+/* CSS Document */
+
+=border-radius($radius: 5px)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=transition($param: all, $time: 1s, $func: ease-in-out)
+  -webkit-transition: $param $time $func
+  -moz-transition: $param $time $func
+  -ms-transition: $param $time $func
+  transition: $param $time $func
+
+=placeholder-color($color-pl)
+  &:-moz-placeholder,
+  &::-moz-placeholder
+    color: $color-pl
+    opacity: 1
+  &::-webkit-input-placeholder
+    color: $color-pl
+
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+strong, b 
+  font-weight: bold
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section 
+  display: block
+body 
+  line-height: 1
+ol, ul 
+  list-style: none
+blockquote, q 
+  quotes: none
+blockquote:before, blockquote:after,
+q:before, q:after 
+  content: ''
+  content: none
+table 
+  border-collapse: collapse
+  border-spacing: 0
+
+a:hover
+  text-decoration: none
+/* End CSS Reset */
+
+/* fonts */
+
+@font-face 
+  font-family: "Roboto"
+  src: url("../fonts/Roboto-Regular.ttf")
+
+@font-face 
+  font-family: "Roboto-B"
+  src: url("../fonts/Roboto-Bold.ttf")
+
+@font-face 
+  font-family: "Oswald"
+  src: url("../fonts/Oswald-Regular.ttf")
+
+@font-face
+  font-family: "Oswald-B"
+  src: url("../fonts/Oswald-Bold.ttf")
+
+@font-face
+  font-family: "Oswald-L"
+  src: url("../fonts/Oswald-Light.ttf")
+
+@font-face
+  font-family: "Oswald-M"
+  src: url("../fonts/Oswald-Medium.ttf")
+
+@font-face
+  font-family: "Roboto-LI"
+  src: url("../fonts/Roboto-LightItalic.ttf")
+
+/* fonts */
+html, body 
+  height: 100%
+  width: 100%
+
+button
+  background: none
+  border: none
+
+button:focus
+  background: none
+  border: none
+  outline: none
+
+h2
+  font: 45px 'Open Sans', sans-serif
+  color: #000000
+
+h3
+  font: 40px 'Open Sans', sans-serif
+  color: #f0b017
+  text-shadow: 2px 0 0 #000
+  text-align: center
+
+/*bootstrap style */
+
+.navbar-default
+  background: transparent
+  border: none
+
+.navbar
+  margin-bottom: 0px
+
+.modal-title
+  font: 20px 'Open Sans', sans-serif
+  color: #000
+
+.form-group
+  label
+    font: 17px 'Roboto', sans-serif
+    color: #000
+    margin-bottom: 5px
+
+.navbar-default .navbar-toggle
+  border-color: #fff
+  background: #fff
+  .icon-bar
+    background: #000
+
+.nav > li > a:hover, .nav > li > a:focus 
+  background-color: transparent
+  border: none
+
+.nav-tabs
+  border-bottom: none
+
+.scroll-up 
+  position: fixed
+  display: block
+  right: -80px
+  top: 161px
+  z-index: 1
+  width: 75px
+  height: 75px
+  -webkit-border-radius: 75px
+  -moz-border-radius: 75px
+  -ms-border-radius: 75px
+  border-radius: 75px
+  cursor: pointer
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3)
+  background: url("../img/arrow.png") 0 0 no-repeat
+  -webkit-transition: right 1s ease-in-out
+  -o-transition: right 1s ease-in-out
+  -moz-transition: right 1s ease-in-out
+  transition: right 1s ease-in-out
+
+  .scroll-up:hover 
+    background: url("../img/arrow-hover.png") 0 0 no-repeat
+  
+.sticky 
+  right: 30px
+  +transition(all, 1s, ease-in-out)
+
+.fixed-menu 
+  position: fixed
+  z-index: 100
+  top: 150px
+  -moz-transition: left 1s ease
+  -webkit-transition: left 1s ease
+  transition: left 1s ease
+  left: -125px
+  ul li 
+    display: block
+    float: none
+    margin-bottom: 2px
+    background-color: black
+    position: relative
+    font: 14px/33px "Open Sans", Arial, sans-serif
+    width: 111px
+    -moz-transition: width 0.3s ease
+    -webkit-transition: width 0.3s ease
+    transition: width 0.3s ease
+    -moz-border-radius: 0 18px 18px 0
+    -webkit-border-radius: 0 18px 18px 0
+    border-radius: 0 18px 18px 0
+    a 
+      display: block
+      color: #fff
+      padding: 5px 5px 5px 26px
+      text-decoration: none
+      position: relative
+      background: url(../img/menu-ic1.png) 5px 50% no-repeat
+
+.animation-menu 
+  transition: left 1s ease-in
+  left: 0px
+  visibility: visible
+
+
+.wrapper
+  width: 100%
+  height: 100%
+  overflow: hidden
+  position: relative
+
+
+
+// Header
+
+.header
+  background: #000000
+  .h-top
+    min-height: 41px
+    margin: 0 auto
+    position: relative
+
+    #sandwich 
+      width: 15px
+      height: 15px
+      padding-top: 5px
+      float: left
+
+      .sw-topper 
+        position: relative
+        top: 0
+        width: 15px
+        height: 2px
+        background: #fff
+        border: none
+        border-radius: 4px 4px 4px 4px
+        transition: transform 0.5s, top 0.2s
+      /* transition-delay: 0.2s, 0s; */
+
+      .sw-bottom 
+        position: relative
+        width: 15px
+        height: 2px
+        top: 2px
+        background: #fff
+        border: none
+        border-radius: 4px 4px 4px 4px
+        transition: transform 0.5s, top 0.2s
+        transition-delay: 0.2s, 0s
+
+      .sw-footer 
+        position: relative
+        width: 15px
+        height: 2px
+        top: 4px
+        background: #fff
+        border: none
+        border-radius: 4px 4px 4px 4px
+        transition: all 0.5s
+        transition-delay: 0.1s
+
+    #sandwich.active .sw-topper 
+      top: 4px
+      transform: rotate(140deg)
+
+    #sandwich.active .sw-bottom 
+      top: 2px
+      transform: rotate(-140deg)
+
+    #sandwich.active .sw-footer 
+      opacity: 0
+      top: 0
+      transform: rotate(180deg)
+
+    .h-contact
+      font: bold 14px 'Roboto-B', sans-serif
+      color: #fff
+    
+    .h-top-block-1
+      padding-top: 9px
+    
+    .h-top-block-2, .h-top-block-3
+      padding-top: 12px
+
+    .h-email
+      display: inline-block
+    .number-list
+      li 
+        float: left
+        padding-left: 15px 
+    
+    .h-address
+      float: right
+
+    .header-menu
+      background: rgba(0,0,0,.3)
+      position: absolute
+      top: 100%
+      z-index: 10
+      padding-bottom: 15px
+      width: 100%
+      .navbar-brand
+        font: bold 25px 'Roboto-B', sans-serif
+        color: #f38400
+        text-shadow: 1px 0 5px #000
+        text-transform: uppercase
+      .under-logo
+        li 
+          float: left
+          font: 12px Verdana
+          color: #c8c8c8
+          text-transform: capitalize
+          padding-right: 5px
+
+      .main-menu 
+        padding-top: 19px
+        li 
+          a
+            text-decoration: none
+            padding: 15px 10px
+            color: #fff
+            font: bold 13px Verdana
+            text-transform: uppercase
+            display: block
+            text-shadow: 2px 2px 2px #000
+            position: relative
+
+          a:hover
+            color: #f38400
+            transform: scale(1.1)
+          
+
+          a::before, a::after
+            position: absolute
+            width: 70px
+            height: 2px
+            background: #ccc
+            content: ''
+            opacity: 0
+            transition: all 0.5s
+
+          a::before 
+            top: 0
+            left: 0
+            transform: rotate(90deg)
+            transform-origin: 0 0
+          
+          a::after 
+            right: 0
+            bottom: 0
+            transform: rotate(90deg)
+            transform-origin: 100% 0
+
+          a:hover::before 
+            opacity: 1
+            left: 50%
+            transform: rotate(0deg) translateX(-50%)
+
+          a:hover::after 
+            opacity: 1
+            right: 50%
+            transform: rotate(0deg) translateX(50%)
+
+.loader 
+  background: none repeat scroll 0 0 #ffffff
+  bottom: 0
+  height: 100%
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  width: 100%
+  z-index: 9999
+
+.loader_inner 
+  background-image: url("../img/preloader.gif")
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  background-color: #fff
+  height: 50px
+  width: 50px
+  margin-top: -25px
+  margin-left: -25px
+  left: 50%
+  top: 50%
+  position: absolute
+
+.effect
+  +transition(all, 7s, linear)
+  transform: scale(1.5)
+
+  
+#carousel-example-generic
+  overflow: hidden
+  img 
+    width: 100%
+    height: auto  
+    +transition(all, 7s, linear)
+
+  .carousel-caption 
+    top: 23%
+    left: auto
+    right: 11%
+    width: 507px
+    p
+      font: bold 49px 'Oswald-demi', sans-serif
+      color: #f0b017
+      text-align: right
+      text-shadow: 5px 0 5px rgba(0,0,0,.75)
+
+  .header-name
+    position: absolute
+    left: 11%
+    top: 23%
+    h1 
+      font: 60px 'Open Sans', sans-serif
+      color: #f38400
+      text-transform: uppercase
+      text-shadow: 5px 0 5px rgba(0,0,0,.75)
+
+      span
+        font: bold 55px 'Oswald-B', sans-serif
+        display: block 
+        padding-left: 100px
+
+.header-button-block
+  position: absolute
+  right: 11%
+  top: 53%
+  button.slaider-button
+    width: 224px
+    height: 64px
+    position: relative
+    background: #f38400
+    font: bold 20px 'Roboto-B', sans-serif
+    text-transform: uppercase
+    text-align: center
+    margin-top: 70px
+    transform: translateY(0px)
+    color: #fff
+    +transition(all, 0.3s, ease-in-out)
+    &:before
+      content: " "
+      width: 100%
+      display: block
+      height: 4px
+      position: absolute
+      top: 100%
+      background: #000000
+      left: 0
+      right: 0
+    &:hover
+      transform: translateY(-5px)
+      +transition(all, 0.3s, ease-in-out)
+      color: #000
+
+.line
+  height: 30px
+  width: 100%
+  background: #f0b017
+
+.small-line
+  height: 13px
+  width: 100%
+  background: #f0b017
+
+.gray-line
+  height: 35px
+  background: linear-gradient(to right, #ebebeb, #bababa)
+  margin-top: 15px
+  margin-bottom: 29px
+
+.h2-header
+  height: 100%
+  margin-bottom: 42px
+  background: #dddad6
+  text-transform: uppercase
+  span
+    display: block
+// ABOUT-US
+
+.about-us
+  padding-bottom: 91px
+  .about-us-block-1
+    img
+      width: 90%
+      height: auto
+      margin: 0 auto
+      display: block
+
+  .about-us-block-2
+    h3.about-us-h
+      padding-bottom: 20px
+    p
+      font: 15px/22px Verdana, arial
+      color: #212020
+    
+  .about-us-block-3
+
+    .about-us-list
+      li 
+        border-bottom: 1px solid #f0b017
+        padding: 24px 0px
+        font: 25px 'Roboto-B', sans-serif
+        color: #000000
+        p 
+          display: inline
+        span
+          float: right
+          color: #f38400
+          font-size: 20px
+
+  .about-us-block-4
+    img
+      width: 90%
+      height: auto
+      margin: 0 auto
+      display: block
+
+  .about-us-block-3, .about-us-block-4
+    margin-top: 100px
+
+//proposal
+
+.proposal
+  min-height: 273px
+  background: url('../img/aktia.png') no-repeat
+  background-size: cover
+  padding-top: 45px
+  padding-bottom: 20px
+
+  .proposal-title
+    font: bold 60px 'Oswald-B', sans-serif
+    color: #fff
+    text: 5px 0 7px #fff
+    text-transform: uppercase
+
+  .proposal-text
+    font: bold 34px 'Roboto-B', sans-serif
+    color: #fff
+    span
+      display: inline-block
+      margin-left: 330px
+
+  .proposal-button
+    width: 279px
+    height: 64px
+    background: #000000
+    color: #fff
+    font: bold 25px 'Roboto-B', sans-serif
+    text-transform: uppercase
+    position: relative
+    float: right
+    &:before
+      content: " "
+      display: block
+      width: 100%
+      height: 4px
+      background: #fff
+      top: 100%
+      left: 0
+      right: 0
+      position: absolute
+
+
+//goods
+.goods
+  .h2-header  
+    margin-bottom: 0px
+  .goods-block
+    height: 300px
+
+    div
+      width: 40%
+      background: rgba(0,0,0,.4)
+      height: 100%
+      padding-left: 45px
+      padding-top: 70px
+
+      h4
+        font: bold 45px 'Oswald', sans-serif
+        color: #fff
+        margin-bottom: 77px
+
+      .more
+        width: 155px
+        height: 37px
+        background: #000000
+        position: relative
+        font: bold 15px 'Roboto-B', sans-serif
+        color: #fff
+        text-transform: uppercase
+        display: block
+        text-align: center
+        padding-top: 10px
+        +transition(all, 0.3s, ease-in-out)
+        &:before
+          height: 3px
+          width: 100%
+          content: " "
+          display: block
+          position: absolute
+          top: 100%
+          left: 0
+          right: 0
+          background: #f38400
+        &:hover
+          +transition(all, 0.3s, ease-in-out)
+          transform: scale(1.1)
+
+  .goods-block-1
+    background: url('../img/tab1.png') no-repeat
+    background-size: cover
+
+  .goods-block-2
+    background: url('../img/tab2.png') no-repeat
+    background-size: cover
+
+  .goods-block-3
+    background: url('../img/tab3.png') no-repeat
+    background-size: cover
+
+  .goods-block-4
+    background: url('../img/tab4.png') no-repeat
+    background-size: cover
+
+  .goods-block-5
+    background: url('../img/tab5.png') no-repeat
+    background-size: cover
+
+  .goods-block-6
+    background: url('../img/tab6.png') no-repeat
+    background-size: cover
+
+//Easy work
+
+.easy-work
+  min-height: 500px
+  background: linear-gradient(to right, #f1c256, #f38604)
+  padding-top: 67px
+  .easy-work-title
+    font: bold 50px 'Oswald', sans-serif
+    color: #fff
+    text-shadow: 5px 0 5px #000
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 30px
+  div 
+    text-align: center
+    span
+      font: 25px 'Open Sans', sans-serif
+      color: #fff 
+      text-shadow: 1px 0 1px #000
+      display: block
+
+
+.easy-work-block
+  transform: translateY(0px)
+  +transition(all, 0.3s, ease-in-out)
+  &:hover
+    transform: translateY(-20px)
+    +transition(all, 0.3s, ease-in-out)
+
+//why we
+
+.why-we
+  padding-bottom: 70px
+  .h2-header
+    margin-bottom: 70px
+  .why-we-title
+    font: 40px 'Roboto-B', sans-serif
+    text-shadow: 2px 0 5px rgba(0,0,0,.75)
+    color: #000
+    position: relative
+    padding-left: 100px
+    &:before
+      content: " "
+      display: block
+      background: url('../img/finger.png') no-repeat
+      width: 80px
+      height: 80px
+      position: absolute
+      left: 0
+      top: -22px
+
+
+  .why-we-block-1 .why-we-title:before
+    background: url('../img/finger.png') no-repeat
+
+  .why-we-block-2 .why-we-title:before
+    background: url('../img/note.png') no-repeat
+
+  ul.why-we-list
+    margin-top: 57px
+    li 
+      font: bold 18px 'Roboto-B', sans-serif
+      color: #000000
+      padding: 20px 0 20px 100px
+      position: relative
+      &:before
+        content: " "
+        display: block
+        width: 40px
+        height: 39px
+        background: url('../img/galka.png') no-repeat
+        position: absolute
+        top: 18px
+        left: 30px
+      &:hover::before
+        background: url('../img/galka_blau.png') no-repeat  
+.work-in-sumy
+  padding-bottom: 62px
+  .work-in-sumy-title
+    height: 160px
+    padding-top: 16px
+    font: bold 50px 'Oswald', sans-serif
+    color: #ffffff
+    text-align: center
+    background: #f0b017
+    text-shadow: 5px 0 5px rgba(0,0,0,.75)
+    text-transform: uppercase
+    margin-bottom: 90px
+    span
+      font-family: 'Oswald-L', sans-serif
+      font-weight: normal
+      display: block
+      text-shadow: 5px 0 5px rgba(0,0,0,.75)
+      text-transform: none
+
+  .work-in-block
+    width: 90%
+    height: 236px
+    margin-bottom: 20px
+    padding-top: 20px
+    display: block
+    margin: 0 auto
+    .work-description
+      width: 90%
+      height: 51px
+      background: rgba(68,69,68,0.9)
+      position: relative
+      overflow: hidden
+      &:before
+        content: " "
+        display: block
+        width: 100%
+        height: 51px
+        background: #f88200
+        left: -98%
+        position: absolute
+        top: 0
+        +transition(all, 0.3s, ease-in-out)
+      span
+        color: #fff
+        font: bold 23px 'Roboto-B', sans-serif
+        padding-left: 25px
+        position: absolute
+        padding-top: 10px
+
+    &:hover .work-description:before
+      +transition(all, 0.3s, ease-in-out)
+      left: 0
+
+  
+  .wib-1
+    background: url('../img/our-work-in-sum.png') no-repeat
+    background-size: cover
+
+  .wib-2
+    background: url('../img/our-work-in-sum2.png') no-repeat
+    background-size: cover
+
+  .wib-3
+    background: url('../img/our-work-in-sum3.png') no-repeat
+    background-size: cover
+
+
+  .show-work
+    width: 326px
+    height: 52px
+    background: #f88200
+    font: bold 20px 'Roboto-B', sans-serif
+    text-transform: uppercase
+    position: relative
+    color: #fff
+    display: block
+    margin: 0 auto
+    display: block
+    &:before
+      content: " "
+      display: block
+      width: 100%
+      height: 4px
+      background: #000
+      position: absolute
+      left: 0
+      right: 0
+      top: 100%
+
+.work-in
+  margin-bottom: 25px
+  cursor: pointer
+  transform: translateY(0px)
+  +transition(all, 0.3s, ease-in-out)
+  &:hover
+    transform: translateY(-20px)
+    +transition(all, 0.3s, ease-in-out)
+
+.parallax-window
+  background: transparent
+  min-height: 432px
+
+
+.news-big-block
+  max-width: 1400px
+  margin: 0 auto
+
+.news
+  padding-top: 49px
+  padding-bottom: 30px
+
+  .news-title
+    font: bold 50px 'Oswald-B', sans-serif
+    text-align: center
+    color: #000
+    text-shadow: 3px 0 2px rgba(0,0,0,.75)
+    text-transform: uppercase
+    margin-bottom: 46px
+    span
+      position: relative
+      display: inline-block
+      &:before
+        content: " "
+        display: block
+        right: 225px
+        top: 50%
+        width: 100px
+        height: 2px
+        background: #f88200
+        position: absolute
+
+      &:after
+        content: " "
+        display: block
+        left: 225px
+        top: 50%
+        width: 100px
+        height: 2px
+        background: #f88200
+        position: absolute
+
+  .news-block
+    padding: 10px
+    h5
+      font: bold 29px 'Roboto-B', sans-serif
+      color: #000
+      text-align: center
+      margin-top: 15px
+      margin-bottom: 10px
+    p
+      font: 18px Arial
+      color: #000000
+      text-align: justify
+
+    img
+      width: 100%
+      height: auto
+
+    button
+      width: 169px
+      height: 36px
+      background: #f0b017
+      color: #fff
+      display: block
+      font: bold 16px 'Roboto-B', sans-serif
+      text-transform: uppercase
+      position: relative
+      margin: 20px auto
+      &:before
+        content: " "
+        display: block
+        width: 100%
+        height: 2px
+        position: absolute
+        top: 100%
+        right: 0
+        left: 0
+        background: #000
+
+// .owl-controlls
+//   position: absolute
+//   top: 50%
+//   width: 100%
+//   width: 50pxs
+//   .owl-buttons
+//     position: relative
+//     font-size: 50px
+//     width: 50px
+//     .owl-prev
+//       left: -65px
+//       position: absolute
+//       z-index: 100
+//       color: #000
+//     .owl-next
+//       right: -65px
+//       position: absolute
+//       z-index: 100
+//       color: #000
+
+.navi-gation
+  text-align: center
+
+.contact
+  padding-bottom: 20px
+  position: relative
+  .contact-news
+    background: linear-gradient(to right, #f1c154, #f38502)
+    text-align: center
+    height: 100px
+    padding-top: 16px
+    margin-bottom: 80px
+    span
+      font: bold 50px 'Oswald-B', sans-serif
+      color: #fff 
+      text-shadow: 5px 0 5px rgba(0,0,0,.75)
+
+  .contact-text
+    font: 20px 'Roboto', sans-serif
+    color: #000
+  
+  .contact-agitation
+    font: bold 40px 'Roboto-B', sans-serif
+    color: #000
+    text-align: right
+
+  .contact-list
+    margin-left: 180px
+    li 
+      .contact-header
+        font: bold 20px 'Roboto-B', sans-serif
+        color: #000000
+        position: relative
+        margin-bottom: 25px
+        &:before
+          content: " "
+          display: block
+          position: absolute
+          top: -9px 
+          left: -58px
+
+      p 
+        font: 17px 'Roboto-L', sans-serif
+        color: #8d8d8d
+        margin-bottom: 9px
+      
+      p:last-child
+        margin-bottom: 20px
+
+      .ch-1:before
+        background: url('../img/address.png') no-repeat
+        width: 25px
+        height: 36px
+
+      .ch-2:before
+        background: url('../img/phone.png') no-repeat
+        width: 21px
+        height: 30px
+        top: -5px
+
+      .ch-3:before
+        background: url('../img/email.png') no-repeat
+        height: 35px
+        width: 35px
+
+  .contact-form
+    input[type="text"], input[type="email"]
+      width: 551px
+      height: 40px
+      border: 2px solid #757575
+      padding-left: 22px
+      font: 15px Verdana
+      color: #0d0d0d
+      margin-bottom: 22px
+
+    textarea
+      width: 551px
+      height: 84px
+      border: 2px solid #757575
+      padding-left: 22px
+      font: 15px Verdana
+      color: #0d0d0d
+      margin-bottom: 20px
+
+    button
+      width: 141px
+      height: 65px
+      background: #f88200
+      position: relative
+      font: 20px 'Oswald-M', sans-serif
+      color: #fff
+      text-transform: uppercase
+      &:before
+        content: " "
+        display: block
+        background: #000000
+        width: 100%
+        height: 2px
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+
+  .maps-title
+    font: 48px 'Open Sans', sans-serif
+    color: #f48f28
+    text-shadow: 1px 0 1px #000
+    text-align: center
+
+  .maps-text
+    font: 25px Verdana
+    text-align: center
+    color: #535353
+    margin-bottom: 17px
+
+  .block-with-maps
+    margin-top: 35px
+    .address
+      padding-left: 15px
+      h6 
+        color: #d27910
+        font-size: bold 27px "Roboto-B", sans-serif
+        margin-bottom: 15px
+        text-align: center
+
+      p 
+        font: 16px "Open Sans", sans-serif
+        color: #333
+        text-align: center
+
+      span 
+        font-size: bold 18px "Roboto-B", sans-serif
+        color: #000
+        text-transform: uppercase
+        text-align: center
+        display: block
+
+      img.pos
+        width: 100%
+        display: block
+        margin: 25px auto
+        height: auto
+
+
+.map
+  width: 700px
+  height: 360px
+
+.footer
+  min-height: 300px
+  width: 100%
+  background: #171717
+  padding-bottom: 36px
+  .footer-contact
+    h5
+      font: bold 32px 'Robot-B', sans-serif
+      text-transform: uppercase
+      text-shadow: 5px 0 5px #000
+      color: #f38400
+      padding-top: 42px
+
+    ul
+      margin-top: 20px
+      li 
+        font: 13px 'Roboto-LI', sans-serif
+        color: #f4f4f4
+        margin-bottom: 12px
+        font-style: italic
+
+  .footer-title
+    font: 30px 'Arial Narrow', Arial, sans-serif
+    color: #f5f2ef
+    padding-top: 23px
+    text-transform: uppercase
+
+  .footer-menu
+    ul
+      margin-top: 45px
+      li 
+        font: 15px Verdana
+        color: #ddd9d5
+        margin-top: 13px
+        text-transform: capitalize
+
+  .footer-order
+    p 
+      font: 15px Verdana
+      color: #d4d0cc
+
+    button.order-footer-button
+      width: 142px
+      height: 32px
+      font: bold 11px Verdana
+      background: #c86c02
+      color: #fff
+      text-transform: uppercase
+      position: relative
+      margin-top: 49px
+      &:before
+        content: " "
+        display: block
+        width: 100%
+        height: 2px
+        top: 100%
+        left: 0
+        right: 0
+        position: absolute
+        background: #9f9f9f
+
+
+.copyright
+  padding: 15px
+  background: #9f9f9f
+  p 
+    font: bold 15px Verdana, arial
+    color: #000000
+
+#owl-demo .item
+  background: #42bdc2
+  padding: 30px 0px
+  margin: 10px
+  color: #FFF
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  text-align: center
+
+//paralax
+
+#parl1
+  position: absolute
+  left: 300px
+  li img
+    opacity: 0.3
+
+#parl2
+  position: absolute
+  right: 100px
+  li img
+    opacity: 0.7
+
+
+@media(max-width: 2000px)
+  #carousel-example-generic .header-name
+    left: 21%
+
+  #carousel-example-generic .carousel-caption
+    right: 21%
+  
+  .header-button-block
+    right: 21%
+
+@media(max-width: 1800px)
+  #carousel-example-generic .header-name
+    left: 18%
+
+  #carousel-example-generic .carousel-caption
+    right: 18%
+  .header-button-block
+    right: 18%
+
+@media(max-width: 1500px)
+  #carousel-example-generic .header-name
+    left: 13%
+
+  #carousel-example-generic .carousel-caption
+    right: 13%
+  .header-button-block
+    right: 13%
+
+@media(max-width: 1300px)
+  #carousel-example-generic .header-name
+    left: 11%
+
+  #carousel-example-generic .carousel-caption
+    right: 11%
+  .header-button-block
+    right: 11%
+@media(max-width: 1200px)
+  .header .h-top 
+    .h-contact
+      font-size: 13px
+
+    .h-top-block-3
+      text-align: center
+      .h-address
+        float: none
+        text-align: center
+  
+  #carousel-example-generic .header-name
+    left: 6%
+    h1 
+      font-size: 50px
+
+  #carousel-example-generic .carousel-caption
+    right: 6%
+    p 
+      font-size: 39px
+
+  .header-button-block
+    right: 6%
+    top: 43%
+
+  .proposal .proposal-text span
+    margin-left: 0px
+  
+  .contact 
+    .contact-form 
+      input[type="text"], input[type="email"]
+        width: 100%
+
+      textarea
+        width: 100%
+
+@media(max-width: 992px)
+  .under-logo
+    overflow: hidden
+    display: inline-block
+    padding-top: 23px
+    padding-left: 15px
+
+  .header .h-top .header-menu .main-menu
+    background: rgba(0,0,0,.75)
+    li
+      text-align: center 
+      a:before, a:after
+        display: none
+      a:hover
+        transform: scale(1)
+      a 
+        display: inline-block
+
+  .navbar-toggle
+    margin-right: 15px
+
+  #carousel-example-generic .header-name
+    left: 4%
+    h1 
+      font-size: 35px
+
+  #carousel-example-generic .carousel-caption
+    right: 4%
+    width: 350px
+    p 
+      font-size: 24px
+  
+  .proposal-title, .proposal-text
+    text-align: center
+  
+  .easy-work-block
+    margin-bottom: 30px
+
+  .why-we 
+    .why-we-title
+      text-align: center
+    .why-we-list
+      margin-bottom: 100px
+
+  .why-we .why-we-title:before
+    left: 15px
+  
+  .work-in-sumy .work-in-sumy-title
+    font-size: 40px
+  
+  .footer-menu
+    .footer-title
+      text-align: center
+
+    ul li
+      text-align: center
+  .footer-order
+    .footer-title
+      text-align: center
+    p 
+      text-align: center
+
+    button.order-footer-button
+      display: block
+      margin: 0 auto
+  
+  .copyright p
+    float: none !important
+    text-align: center
+
+@media(max-width: 768px)
+  
+  .fixed-menu, .scroll-up
+    display: none
+  
+  #carousel-example-generic .header-name
+    left: 3%
+    h1 
+      font-size: 30px
+      span
+        font-size: 25px
+
+  #carousel-example-generic .carousel-caption
+    right: 3%
+    width: 300px
+    p 
+      font-size: 19px
+  
+  #carousel-example-generic .carousel-caption button
+    margin-top: 50px
+
+  .h2-header
+    padding-left: 15px
+  
+  .h-top-block-2
+    overflow: hidden
+
+  .header .h-top .number-list li
+    width: 33.33333%
+    text-align: center
+    padding-left: 0
+
+  .under-logo
+    display: none
+
+
+  .about-us .about-us-block-2 p
+    padding: 10px
+    text-align: center
+
+  .about-us .about-us-block-3 .about-us-list li
+    padding-left: 20px
+    padding-right: 20px  
+  
+  .about-us 
+    .about-us-block-1 img, .about-us-block-4 img
+      width: 100%
+  
+  .action-button-block
+    text-align: center
+    button.proposal-button
+      display: inline-block
+      float: none
+      margin-top: 15px
+  
+  .work-in-sumy .work-in-sumy-title
+    font-size: 27px
+  
+  .map
+    width: 100%
+    height: auto
+
+  .owl-controls
+    display: none
+
+  .proposal 
+    .proposal-title
+      font-size: 45px
+
+    .proposal-text
+      font-size: 24px
+  
+  .goods .goods-block div 
+    width: auto
+    padding-right: 15px
+
+  .contact 
+    .contact-text
+      text-align: center
+      margin-bottom: 15px
+
+    .contact-agitation
+      text-align: center
+      margin-bottom: 15px
+
+    .contact-list
+      margin-left: 0px 
+      li
+        text-align: center 
+        .contact-header
+          text-align: center
+          display: inline-block
+
+        p 
+          text-align: center
+    .contact-form
+      margin-top: 40px 
+      button
+        margin: 0 auto
+        display: block
+
+  .news .news-title span
+    &:before
+      display: none
+    &:after
+      display: none
+  
+  
+  .footer 
+    .footer-contact 
+      h5
+        text-align: center
+      ul li 
+        text-align: center
+ 
+@media(max-width: 500px)
+  .carousel-caption p
+    display: none
+
+@media(max-width: 400px)
+  #carousel-example-generic 
+    .header-name
+      width: 100% 
+      h1
+        width: 100%
+        text-align: center
+        margin-top: 20px
+        span 
+          padding-left: 0px
+          display: inline
+
+  .header-button-block
+    left: 0
+    width: 100%
+    text-align: center
+    button.slaider-button
+      display: block
+      margin: 0 auto
+      float: none !important
+      width: 205px
+      height: 39px
+      margin-top: 50px    
+
+    .header-name
+      left: 0
+
+  .proposal 
+    .proposal-title
+      font-size: 34px
+
+    .proposal-text
+      font-size: 18px
+
+    .proposal-button
+      width: 100%
+
+  .contact 
+    .contact-form
+      margin-top: 40px 
+      button
+        width: 100%
